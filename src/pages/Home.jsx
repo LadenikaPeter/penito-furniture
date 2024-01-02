@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { SECOND__SECTION } from "../constants/Home";
+import { SECOND__SECTION, SERVICES } from "../constants/Home";
+import Button from "../components/Button";
+import ServiceBox from "../components/ServiceBox";
 
 export default function Home() {
   const [menuItem, setMenuItem] = useState("All Funrnitures");
@@ -123,10 +125,46 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="text-center flex justify-center pt-10 cursor-pointer">
-            <h3 className="bg-[#1C333B] text-white w-[10%]- px-[14px] py-[15px] rounded-[72px]">
-              See more
-            </h3>
+          <Button text={"see more"} />
+        </section>
+
+        <section id="third__section" className="pt-[120px]">
+          <div>
+            <h1 className="text-center font-semibold text-[44px] text-[#122025]">
+              Our Services & Benefits
+            </h1>
+            <div className="grid grid-cols-12">
+              {/* <div> */}
+              <div className="col-span-8 ">
+                <div>
+                  <div className="flex gap-[150px]">
+                    {SERVICES[0].first_set.map((item) => {
+                      return (
+                        <ServiceBox
+                          image={item.Image}
+                          title={item.title}
+                          subHeading={item.subHeading}
+                        />
+                      );
+                    })}
+                  </div>
+                  <div className="flex gap-[150px]">
+                    {SERVICES[1].second_set.map((item) => {
+                      return (
+                        <ServiceBox
+                          image={item.Image}
+                          title={item.title}
+                          subHeading={item.subHeading}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-4">
+                <img src="src/assets/confrence.png" alt="confrence-image" />
+              </div>
+            </div>
           </div>
         </section>
       </div>

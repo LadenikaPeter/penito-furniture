@@ -36,7 +36,7 @@ export default function Header() {
                   {NAV_MENU.map((menu) => {
                     return (
                       <div
-                        className="flex flex-col items-center gap-[5px] "
+                        className="flex flex-col items-center gap-[5px] cursor-pointer "
                         onClick={() => setActiveLink(menu)}
                       >
                         <a className="font-medium text-lg">{menu}</a>
@@ -48,8 +48,14 @@ export default function Header() {
                   })}
                 </div>
                 <div className="flex gap-8">
-                  <img src="src/assets/search-icon.svg" />
-                  <img src="src/assets/cart-icon.svg" />
+                  <img
+                    src="src/assets/search-icon.svg"
+                    className="cursor-pointer"
+                  />
+                  <img
+                    src="src/assets/cart-icon.svg"
+                    className="cursor-pointer"
+                  />
                 </div>
               </div>
             </div>

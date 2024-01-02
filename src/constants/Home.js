@@ -75,3 +75,38 @@ export const SECOND__SECTION = {
     },
   ],
 };
+
+export const SERVICES = [
+  {
+    first_set: [
+      {
+        Image: "src/assets/delivery.svg",
+        title: "Fast & Free Shipping",
+        subHeading:
+          "Sign up to premier delivery in Nigeria for unlimited free shipping from USA.",
+      },
+      {
+        Image: "src/assets/24hrs.svg",
+        title: "24/7 Support",
+        subHeading:
+          "24/7 support is a kind of support that is available throughout.",
+      },
+    ],
+  },
+  {
+    second_set: [
+      {
+        Image: "src/assets/repeat.svg",
+        title: "Hassle Free Returns",
+        subHeading:
+          "Free return within 15 days for official store items and 7 days for other eligible items.",
+      },
+      {
+        Image: "src/assets/price.svg",
+        title: "Your Best Price Matching",
+        subHeading:
+          "Ask to speak to a manger, show him the competitor’s lower price.",
+      },
+    ],
+  },
+];
