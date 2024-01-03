@@ -125,18 +125,20 @@ export default function Home() {
               );
             })}
           </div>
-          <Button text={"see more"} />
+          <div className="text-center flex justify-center pt-10 cursor-pointer">
+            <Button text={"see more"} />
+          </div>
         </section>
 
         <section id="third__section" className="pt-[120px]">
           <div>
-            <h1 className="text-center font-semibold text-[44px] text-[#122025]">
+            <h1 className="text-center font-semibold text-[44px] text-[#122025] mb-16">
               Our Services & Benefits
             </h1>
             <div className="grid grid-cols-12">
               {/* <div> */}
-              <div className="col-span-8 ">
-                <div>
+              <div className="col-span-8 pr-4">
+                <div className="flex flex-col gap-16">
                   <div className="flex gap-[150px]">
                     {SERVICES[0].first_set.map((item) => {
                       return (
@@ -162,8 +164,15 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-span-4">
-                <img src="src/assets/confrence.png" alt="confrence-image" />
+                <img
+                  src="src/assets/confrence.png"
+                  alt="confrence-image"
+                  className="h-full"
+                />
               </div>
+            </div>
+            <div className="cursor-pointer mt-16">
+              <Button text={"know more"} />
             </div>
           </div>
         </section>
