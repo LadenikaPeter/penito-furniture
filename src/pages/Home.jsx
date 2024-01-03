@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { SECOND__SECTION, SERVICES, TESTIMONIALS } from "../constants/Home";
+import {
+  GALLERY,
+  SECOND__SECTION,
+  SERVICES,
+  SPONSORS,
+  TESTIMONIALS,
+} from "../constants/Home";
 import Button from "../components/Button";
 import ServiceBox from "../components/ServiceBox";
 
@@ -220,10 +226,52 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section id="fifth__section" className="pt-[180px]">
+          <h1 className="text-[#122025] font-semibold text-[44px] text-center mb-16">
+            Our Partners & Sponsors
+          </h1>
+          <div className="flex justify-center">
+            <div className="w-[86%]">
+              <div className="grid grid-cols-[repeat(auto-fit,_minmax(175px,_1fr))] items-center gap-10">
+                {SPONSORS.map((item) => {
+                  if (item === "") {
+                    return <div></div>;
+                  }
+                  return <img src={`src/assets/sponsors/${item}.svg`} />;
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
+      <section
+        id="sixth__section"
+        className="mt-[100px] bg-[#FAFAFA] py-[80px]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-[#122025] font-semibold text-[36px] mb-[56px] pl-16">
+            Visit Our Instagram Gallery
+          </h1>
+          <div className="flex gap-8 justify-center">
+            {GALLERY.map((item) => {
+              return (
+                <div className="relative group">
+                  <img
+                    src={`src/assets/gallery/${item}.png`}
+                    alt="image"
+                    className="w-[210px] h-[210px]"
+                  />
+                  <div class="absolute inset-0 rounded-lg  opacity-0 flex items-center justify-center group-hover:opacity-60 group-hover:bg-black transition-opacity">
+                    <img src="src/assets/instagram-outlined.svg" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
-// rounded-[72px] py-3 px-6
-// bg-[#1FB890]  text-white
-// grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))]
+

@@ -119,3 +119,18 @@ export const TESTIMONIALS = [
     title: "Digital Marketer",
   },
 ];
+
+export const SPONSORS = [
+  "google",
+  "coursera",
+  "airbnb",
+  "microsoft",
+  "duolingo",
+  "",
+  "udemy",
+  "pluralsight",
+  "airtable",
+  "",
+];
+
+export const GALLERY = ["ig1", "ig2", "ig3", "ig4", "ig5"];
