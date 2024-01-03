@@ -110,3 +110,12 @@ export const SERVICES = [
     ],
   },
 ];
+
+export const TESTIMONIALS = [
+  {
+    testimonial:
+      "I am thrilled to share my experience working with penito as their digital marketer. In the ever-evolving landscape of online commerce, partnering with a brand that not only understands the pulse of the market but also embraces innovation is a rare find and penito exemplifies just that. From the outset, their commitment to quality craftsmanship seamlessly translates into every facet of their digital presence. Crafting a comprehensive digital strategy for penito was not just about showcasing their exquisite pieces but telling a compelling story that resonates with the audience. The synergy between the brand's aesthetic appeal and our strategic approach has undoubtedly been a game-changer.",
+    name: "Oyeniyi Adedoyin",
+    title: "Digital Marketer",
+  },
+];

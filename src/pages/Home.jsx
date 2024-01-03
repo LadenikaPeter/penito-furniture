@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SECOND__SECTION, SERVICES } from "../constants/Home";
+import { SECOND__SECTION, SERVICES, TESTIMONIALS } from "../constants/Home";
 import Button from "../components/Button";
 import ServiceBox from "../components/ServiceBox";
 
@@ -14,11 +14,13 @@ export default function Home() {
     }
   }
 
-  function reusable(value, src, alt) {
+  function reusable(value, src, alt, w = 30, h = 30) {
     const images = [];
 
     for (let i = 0; i < value; i++) {
-      images.push(<img src={src} alt={alt} />);
+      images.push(
+        <img src={src} alt={alt} className={`w-[${w}px] h-[${h}px]`} />
+      );
     }
 
     return images;
@@ -136,7 +138,6 @@ export default function Home() {
               Our Services & Benefits
             </h1>
             <div className="grid grid-cols-12">
-              {/* <div> */}
               <div className="col-span-8 pr-4">
                 <div className="flex flex-col gap-16">
                   <div className="flex gap-[150px]">
@@ -173,6 +174,49 @@ export default function Home() {
             </div>
             <div className="cursor-pointer mt-16">
               <Button text={"know more"} />
+            </div>
+          </div>
+        </section>
+
+        <section id="fourth__section" className="pt-[160px]">
+          <div className="grid grid-cols-12">
+            <div className="col-span-7">
+              <div className="flex flex-col gap-6">
+                <h1 className="capitalize text-[36px] font-semibold text-[#122025]">
+                  our customer say
+                </h1>
+                {TESTIMONIALS.map((item) => {
+                  return (
+                    <>
+                      <p className="text-[#58666B]">{item.testimonial}</p>
+                      <div className="flex flex-col gap-3">
+                        <div className="flex">
+                          {reusable(
+                            4,
+                            "src/assets/full-star.svg",
+                            "star-icon",
+                            25,
+                            25
+                          ).map((image) => {
+                            return image;
+                          })}
+                          <img
+                            src="src/assets/half-star.svg"
+                            className="w-[25px] h-[25px]"
+                          />
+                        </div>
+                        <h4 className="text-[#122025] font-semibold text-xl">
+                          {item.name}
+                        </h4>
+                        <h5 className="text-[#58666B] text-lg">{item.title}</h5>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="col-span-5 flex py-[50px] px-[15px]">
+              <img src="src/assets/customer.png" alt="Testimonial-img" />
             </div>
           </div>
         </section>
