@@ -8,6 +8,7 @@ import {
 } from "../constants/Home";
 import Button from "../components/Button";
 import ServiceBox from "../components/ServiceBox";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [menuItem, setMenuItem] = useState("All Funrnitures");
@@ -271,7 +272,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
-
