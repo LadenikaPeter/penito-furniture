@@ -254,21 +254,23 @@ export default function Home() {
           <h1 className="text-[#122025] font-semibold text-[36px] mb-[56px] pl-16">
             Visit Our Instagram Gallery
           </h1>
-          <div className="flex gap-8 justify-center">
-            {GALLERY.map((item) => {
-              return (
-                <div className="relative group">
-                  <img
-                    src={`src/assets/gallery/${item}.png`}
-                    alt="image"
-                    className="w-[210px] h-[210px]"
-                  />
-                  <div class="absolute inset-0 rounded-lg  opacity-0 flex items-center justify-center group-hover:opacity-60 group-hover:bg-black transition-opacity">
-                    <img src="src/assets/instagram-outlined.svg" />
+          <div className="min-w-full overflow-x-auto">
+            <div className="flex gap-8 min-[1250px]:justify-center ">
+              {GALLERY.map((item) => {
+                return (
+                  <div className="relative group">
+                    <img
+                      src={`src/assets/gallery/${item}.png`}
+                      alt="image"
+                      className="min-w-[210px] h-[210px]"
+                    />
+                    <div class="absolute inset-0 rounded-lg  opacity-0 flex items-center justify-center group-hover:opacity-60 group-hover:bg-black transition-opacity">
+                      <img src="src/assets/instagram-outlined.svg" />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

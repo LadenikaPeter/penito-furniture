@@ -25,16 +25,10 @@ export const INFO = [
       "Delivery",
       "Legal Notice",
       "Documentation",
-      "Secure Paymenyt",
+      "Secure Payment",
       "Stores",
     ],
   },
 ];
 
-export const SOCIALS = [
-  "ig",
-  "facebook",
-  "linkedin",
-  "behance",
-  "dribble"
-]
+export const SOCIALS = ["ig", "facebook", "linkedin", "behance", "dribble"];

@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <section id="footer__section" className="pt-[144px] pb-[50px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex gap-[136px] ">
+        <div className="flex gap-[136px] flex-wrap max-[766px]:flex-col">
           <div className="flex flex-col gap-8 w-[285px]">
             <div className="flex gap-2 ">
               <img src="src/assets/icon.svg" alt="Logo" />
@@ -31,10 +31,10 @@ export default function Footer() {
               })}
             </div>
           </div>
-          <div className="flex gap-[66px]">
+          <div className="flex gap-[66px] flex-wrap max-[766px]:flex-col">
             {INFO.map((item) => {
               return (
-                <div className="w-[232px]">
+                <div className="">
                   <h4 className="text-2xl font-medium">{item.title}</h4>
                   <hr className="w-16 border-solid border-[1.5px] border-[#58666B] my-10" />
                   <ul className="flex flex-col gap-3">
