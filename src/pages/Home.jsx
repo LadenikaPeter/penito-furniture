@@ -37,18 +37,18 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section id="Hero__section" className="pt-20">
           <div className="grid grid-cols-12">
-            <div className="col-span-6 flex flex-col justify-center gap-8">
-              <h1 className="text-[#122025] font-medium capitalize text-[40px]">
+            <div className="min-[767px]:col-span-6 col-span-12 flex flex-col justify-center gap-8">
+              <h1 className="text-[#122025] font-medium capitalize text-[clamp(30px,4vw,40px)]">
                 Discover{" "}
                 <span className="text-[#F2C229] font-bold">The Best </span>
                 Furniture for <span className=" font-bold">your Interior</span>
               </h1>
-              <p className="text-[#58666B] text-[21px]">
+              <p className="text-[#58666B] text-[clamp(16px,4vw,18px)]">
                 We design pieces of furniture and objects that perfectly gap
                 between Beauty and functionality
               </p>
               <div className="flex gap-16">
-                <button className="flex bg-[#1C2A2F] text-white px-7 py-4 gap-4 items-center rounded-lg cursor-pointer">
+                <button className="flex bg-[#1C2A2F] text-white px-7 py-4 gap-4 items-center rounded-lg cursor-pointer text-nowrap">
                   Shop Now <img src="src/assets/right.svg" />
                 </button>
                 <button>
@@ -59,7 +59,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="col-span-6">
+            <div className="md:col-span-6 md:block hidden pl-2">
               <img src="src/assets/hero-image.png" />
             </div>
           </div>
