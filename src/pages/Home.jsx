@@ -67,20 +67,20 @@ export default function Home() {
 
         <section id="second__section" className="pt-[120px]">
           <div className="flex items-center flex-col">
-            <h1 className="font-semibold text-[#122025] text-center text-[44px] w-[75%] pb-6">
+            <h1 className="font-semibold text-[#122025] text-center text-[clamp(16px,4vw,44px)] w-[75%] pb-6">
               {SECOND__SECTION.title}
             </h1>
-            <p className="text-[#58666B] text-2xl w-[83%] text-center pb-12">
+            <p className="text-[#58666B] text-[clamp(16px,4vw,24px)] w-[83%] text-center pb-12">
               {SECOND__SECTION.subHeading}
             </p>
           </div>
 
           <div className="flex justify-center">
-            <div className=" flex items-center  gap-6">
+            <div className=" flex items-center  gap-6 overflow-scroll">
               {SECOND__SECTION.menu.map((item) => {
                 return (
                   <div
-                    className={`rounded-[72px] py-3 px-6 cursor-pointer  ${
+                    className={`rounded-[72px] py-3 px-6 cursor-pointer text-nowrap  ${
                       item === menuItem
                         ? "bg-[#1FB890]  text-white"
                         : "bg-[#F8FBFB] text-black"
@@ -98,7 +98,11 @@ export default function Home() {
             {SECOND__SECTION.menu_items.map((item) => {
               return (
                 <div className="flex flex-col p-4 gap-[25px] bg-[#F8FBFB] rounded-lg hover:bg-white hover:shadow-[0_4px_16px_0_rgba(14,191,221,0.20)]">
-                  <img src={item.src} alt={item.alt} className="h-[179px]" />
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-[179px] object-contain"
+                  />
                   <div>
                     <div className="flex flex-col gap-2">
                       <h5 className="font-semibold capitalize text-[14px]">
@@ -134,20 +138,20 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="text-center flex justify-center pt-10 cursor-pointer">
+          <div className="text-center flex justify-center pt-10">
             <Button text={"see more"} />
           </div>
         </section>
 
         <section id="third__section" className="pt-[120px]">
           <div>
-            <h1 className="text-center font-semibold text-[44px] text-[#122025] mb-16">
+            <h1 className="text-center font-semibold text-[clamp(16px,4vw,44px)] text-[#122025] mb-16">
               Our Services & Benefits
             </h1>
             <div className="grid grid-cols-12">
-              <div className="col-span-8 pr-4">
+              <div className="xl:col-span-8 col-span-12 pr-4">
                 <div className="flex flex-col gap-16">
-                  <div className="flex gap-[150px]">
+                  <div className="flex gap-[150px] max-[1279px]:justify-center max-[767px]:flex-wrap max-[767px]:gap-16">
                     {SERVICES[0].first_set.map((item) => {
                       return (
                         <ServiceBox
@@ -158,7 +162,7 @@ export default function Home() {
                       );
                     })}
                   </div>
-                  <div className="flex gap-[150px]">
+                  <div className="flex gap-[150px] max-[1279px]:justify-center max-[767px]:flex-wrap max-[767px]:gap-16">
                     {SERVICES[1].second_set.map((item) => {
                       return (
                         <ServiceBox
@@ -171,15 +175,15 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="col-span-4">
+              <div className="xl:col-span-4 xl:block hidden ">
                 <img
                   src="src/assets/confrence.png"
                   alt="confrence-image"
-                  className="h-full"
+                  className="h-full object-contain"
                 />
               </div>
             </div>
-            <div className="cursor-pointer mt-16">
+            <div className=" flex mt-16 max-[767px]:justify-center">
               <Button text={"know more"} />
             </div>
           </div>
@@ -187,9 +191,9 @@ export default function Home() {
 
         <section id="fourth__section" className="pt-[160px]">
           <div className="grid grid-cols-12">
-            <div className="col-span-7">
+            <div className="md:col-span-7 col-span-12">
               <div className="flex flex-col gap-6">
-                <h1 className="capitalize text-[36px] font-semibold text-[#122025]">
+                <h1 className="capitalize text-[clamp(16px,4vw,36px)] font-semibold text-[#122025]">
                   our customer say
                 </h1>
                 {TESTIMONIALS.map((item) => {
@@ -222,22 +226,26 @@ export default function Home() {
                 })}
               </div>
             </div>
-            <div className="col-span-5 flex py-[50px] px-[15px]">
-              <img src="src/assets/customer.png" alt="Testimonial-img" />
+            <div className="md:col-span-5 md:flex hidden py-[50px] px-[15px]">
+              <img
+                src="src/assets/customer.png"
+                alt="Testimonial-img"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
 
         <section id="fifth__section" className="pt-[180px]">
-          <h1 className="text-[#122025] font-semibold text-[44px] text-center mb-16">
+          <h1 className="text-[#122025] font-semibold text-[clamp(16px,4vw,44px)] text-center mb-16">
             Our Partners & Sponsors
           </h1>
           <div className="flex justify-center">
-            <div className="w-[86%]">
-              <div className="grid grid-cols-[repeat(auto-fit,_minmax(175px,_1fr))] items-center gap-10">
+            <div className="w-[86%] max-[1267px]:overflow-scroll">
+              <div className="min-[1268px]:items-center grid grid-cols-[repeat(auto-fit,_minmax(175px,_1fr))] gap-10 max-[1267px]:flex">
                 {SPONSORS.map((item) => {
                   if (item === "") {
-                    return <div></div>;
+                    return <div className="max-[1267px]:hidden"></div>;
                   }
                   return <img src={`src/assets/sponsors/${item}.svg`} />;
                 })}
@@ -251,7 +259,7 @@ export default function Home() {
         className="mt-[100px] bg-[#FAFAFA] py-[80px]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-[#122025] font-semibold text-[36px] mb-[56px] pl-16">
+          <h1 className="text-[#122025] font-semibold text-[clamp(16px,4vw,36px)] mb-[56px] pl-16">
             Visit Our Instagram Gallery
           </h1>
           <div className="min-w-full overflow-x-auto">

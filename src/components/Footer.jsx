@@ -52,8 +52,8 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-[85px] text-[#58666B] text-[18px]">
-          `© copyright {getYear()} |{" "}
-          <span className="font-bold text-black">Penito</span> by Peter`
+          © copyright {getYear()} |{" "}
+          <span className="font-bold text-black">Penito</span> by Peter
         </p>
       </div>
     </section>
