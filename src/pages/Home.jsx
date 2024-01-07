@@ -37,7 +37,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section id="Hero__section" className="pt-20">
           <div className="grid grid-cols-12">
-            <div className="min-[767px]:col-span-6 col-span-12 flex flex-col justify-center gap-8">
+            <div className="md:col-span-6 col-span-12 flex flex-col justify-center gap-8">
               <h1 className="text-[#122025] font-medium capitalize text-[clamp(30px,4vw,40px)]">
                 Discover{" "}
                 <span className="text-[#F2C229] font-bold">The Best </span>
@@ -47,7 +47,7 @@ export default function Home() {
                 We design pieces of furniture and objects that perfectly gap
                 between Beauty and functionality
               </p>
-              <div className="flex gap-16">
+              <div className="flex gap-16 max-[768px]:gap-6 max-[374px]:flex-wrap">
                 <button className="flex bg-[#1C2A2F] text-white px-7 py-4 gap-4 items-center rounded-lg cursor-pointer text-nowrap">
                   Shop Now <img src="src/assets/right.svg" />
                 </button>
@@ -67,7 +67,7 @@ export default function Home() {
 
         <section id="second__section" className="pt-[120px]">
           <div className="flex items-center flex-col">
-            <h1 className="font-semibold text-[#122025] text-center text-[clamp(16px,4vw,44px)] w-[75%] pb-6">
+            <h1 className="font-semibold text-[#122025] text-center text-[clamp(22px,4vw,44px)] w-[75%] pb-6">
               {SECOND__SECTION.title}
             </h1>
             <p className="text-[#58666B] text-[clamp(16px,4vw,24px)] w-[83%] text-center pb-12">
@@ -145,11 +145,11 @@ export default function Home() {
 
         <section id="third__section" className="pt-[120px]">
           <div>
-            <h1 className="text-center font-semibold text-[clamp(16px,4vw,44px)] text-[#122025] mb-16">
+            <h1 className="text-center font-semibold text-[clamp(22px,4vw,44px)] text-[#122025] mb-16">
               Our Services & Benefits
             </h1>
             <div className="grid grid-cols-12">
-              <div className="xl:col-span-8 col-span-12 pr-4">
+              <div className="xl:col-span-8 col-span-12 xl:pr-4">
                 <div className="flex flex-col gap-16">
                   <div className="flex gap-[150px] max-[1279px]:justify-center max-[767px]:flex-wrap max-[767px]:gap-16">
                     {SERVICES[0].first_set.map((item) => {
@@ -193,7 +193,7 @@ export default function Home() {
           <div className="grid grid-cols-12">
             <div className="md:col-span-7 col-span-12">
               <div className="flex flex-col gap-6">
-                <h1 className="capitalize text-[clamp(16px,4vw,36px)] font-semibold text-[#122025]">
+                <h1 className="capitalize text-[clamp(22px,4vw,36px)] font-semibold text-[#122025]">
                   our customer say
                 </h1>
                 {TESTIMONIALS.map((item) => {
@@ -237,7 +237,7 @@ export default function Home() {
         </section>
 
         <section id="fifth__section" className="pt-[180px]">
-          <h1 className="text-[#122025] font-semibold text-[clamp(16px,4vw,44px)] text-center mb-16">
+          <h1 className="text-[#122025] font-semibold text-[clamp(22px,4vw,44px)] text-center mb-16">
             Our Partners & Sponsors
           </h1>
           <div className="flex justify-center">
@@ -259,7 +259,7 @@ export default function Home() {
         className="mt-[100px] bg-[#FAFAFA] py-[80px]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-[#122025] font-semibold text-[clamp(16px,4vw,36px)] mb-[56px] pl-16">
+          <h1 className="text-[#122025] font-semibold text-[clamp(22px,4vw,36px)] mb-[56px] min-[426px]:pl-16 max-[425px]:text-center">
             Visit Our Instagram Gallery
           </h1>
           <div className="min-w-full overflow-x-auto">
