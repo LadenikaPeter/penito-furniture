@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { NAV_MENU } from "../constants/nav";
 
-export default function Header() {
+export default function Header({ isOpen: isOpenFunc, isCLicked }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState("Living Room");
 
   const toggleMobileMenu = () => {
     setIsOpen((prevState) => !prevState);
+    isOpenFunc();
   };
 
   const closeMobileMenu = () => {
     setIsOpen(false);
+    isOpenFunc();
   };
 
   const setActiveLink = (item) => {
@@ -65,7 +67,7 @@ export default function Header() {
             <button
               onClick={toggleMobileMenu}
               type="button"
-              className="items-center p-2 "
+              className="items-center p-2 z-[1] "
             >
               {!isOpen && (
                 <img
@@ -84,12 +86,25 @@ export default function Header() {
         </div>
       </div>
 
-      <div id="mobile-menu" className={`${isOpen ? "block" : "hidden"}`}>
-        <div className="px-2 py-2 flex flex-col">
+      <div
+        id="mobile-menu"
+        className={`${
+          isOpen && isClicked ? "block" : isOpen ? null : "otherValue"
+        } relative z-[1]`}
+      >
+        <div
+          className={`px-2 py-4 flex flex-col text-[#1C2A2F] bg-[#F2C229] absolute w-full animate__animated ${
+            isOpen ? "animate__slideInDown" : "animate__slideOutLeft"
+          }`}
+        >
           {NAV_MENU.map((menu, i) => {
-            return <a onClick={closeMobileMenu}>{menu}</a>;
+            return (
+              <a onClick={closeMobileMenu} className="font-medium py-1 mb-1">
+                {menu}
+              </a>
+            );
           })}
-          <a>cart</a>
+          <a className="font-medium py-1 mb-1">Cart</a>
           <div className="flex">
             <input placeholder="search" className="flex-grow" />
             <img src="src/assets/search-icon.svg" />

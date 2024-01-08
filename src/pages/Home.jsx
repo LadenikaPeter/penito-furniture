@@ -10,7 +10,7 @@ import Button from "../components/Button";
 import ServiceBox from "../components/ServiceBox";
 import Footer from "../components/Footer";
 
-export default function Home() {
+export default function Home({ menuOpen, menuClosedHandler }) {
   const [menuItem, setMenuItem] = useState("All Funrnitures");
 
   function changeItem(item) {
@@ -34,6 +34,14 @@ export default function Home() {
   }
   return (
     <>
+      <div
+        onClick={menuClosedHandler}
+        className={
+          menuOpen
+            ? "fixed top-0 left-0 w-full h-full bg-black opacity-50 z-0"
+            : null
+        }
+      ></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section id="Hero__section" className="pt-20">
           <div className="grid grid-cols-12">
@@ -149,7 +157,7 @@ export default function Home() {
               Our Services & Benefits
             </h1>
             <div className="grid grid-cols-12">
-              <div className="xl:col-span-8 col-span-12 xl:pr-4">
+              <div className="xl:col-span-8 col-span-12 xl: pr-4">
                 <div className="flex flex-col gap-16">
                   <div className="flex gap-[150px] max-[1279px]:justify-center max-[767px]:flex-wrap max-[767px]:gap-16">
                     {SERVICES[0].first_set.map((item) => {
