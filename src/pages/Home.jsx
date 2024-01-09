@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 import {
   GALLERY,
   SECOND__SECTION,
@@ -32,6 +32,8 @@ export default function Home({ menuOpen, menuClosedHandler }) {
 
     return images;
   }
+
+
   return (
     <>
       <div

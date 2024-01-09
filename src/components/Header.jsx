@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NAV_MENU } from "../constants/nav";
 
-export default function Header({ isOpen: isOpenFunc, isCLicked }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Header({
+  toggleMenu: toggleMobileMenu,
+  closeMenu: closeMobileMenu,
+  isOpen,
+  initial,
+}) {
   const [isActive, setIsActive] = useState("Living Room");
-
-  const toggleMobileMenu = () => {
-    setIsOpen((prevState) => !prevState);
-    isOpenFunc();
-  };
-
-  const closeMobileMenu = () => {
-    setIsOpen(false);
-    isOpenFunc();
-  };
 
   const setActiveLink = (item) => {
     if (item !== "Living Room") {
@@ -88,26 +82,36 @@ export default function Header({ isOpen: isOpenFunc, isCLicked }) {
 
       <div
         id="mobile-menu"
-        className={`${
-          isOpen && isClicked ? "block" : isOpen ? null : "otherValue"
-        } relative z-[1]`}
+        className={`${isOpen && "block"}  ${initial && "hidden"}
+         relative z-[1]`}
       >
         <div
-          className={`px-2 py-4 flex flex-col text-[#1C2A2F] bg-[#F2C229] absolute w-full animate__animated ${
-            isOpen ? "animate__slideInDown" : "animate__slideOutLeft"
-          }`}
+          className={`px-6 py-6 flex flex-col gap-3 rounded text-[#1C2A2F] bg-[#F2C229] absolute w-full animate__animated 
+          
+          ${isOpen && "animate__slideInDown"} 
+          ${!isOpen && "animate__slideOutLeft"}
+          
+          `}
         >
           {NAV_MENU.map((menu, i) => {
             return (
-              <a onClick={closeMobileMenu} className="font-medium py-1 mb-1">
+              <a
+                onClick={closeMobileMenu}
+                className="font-medium border-[2px] border-white border-solid p-[5px] rounded"
+              >
                 {menu}
               </a>
             );
           })}
-          <a className="font-medium py-1 mb-1">Cart</a>
-          <div className="flex">
-            <input placeholder="search" className="flex-grow" />
-            <img src="src/assets/search-icon.svg" />
+          <a className="font-medium border-[2px] border-white border-solid p-[5px] rounded">
+            Cart
+          </a>
+          <div className="flex gap-2">
+            <input
+              placeholder="search"
+              className="flex-grow p-[5px] focus:outline-0 rounded-[4px]"
+            />
+            <img src="src/assets/search-icon.svg" className="cursor-pointer" />
           </div>
         </div>
       </div>

@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileMenuClosed, setIsMobileMenuClosed] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isIntialRender, setIsInitialRender] = useState(true);
 
   const menuHandler = () => {
     setIsMobileMenuOpen((prevState) => {
@@ -13,13 +14,30 @@ function App() {
   };
 
   const closeMenuHandler = () => {
-    setIsMobileMenuClosed(false);
+    setIsOpen(false);
+    setIsMobileMenuOpen(false);
     console.log("works");
+  };
+
+  const toggleMobileMenu = () => {
+    setIsOpen((prevState) => !prevState);
+    menuHandler();
+    setIsInitialRender(false);
+  };
+
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+    menuHandler();
   };
 
   return (
     <>
-      <Header isOpen={menuHandler} isClicked={isMobileMenuClosed} />
+      <Header
+        toggleMenu={toggleMobileMenu}
+        closeMenu={closeMobileMenu}
+        isOpen={isOpen}
+        initial={isIntialRender}
+      />
       <Home menuOpen={isMobileMenuOpen} menuClosedHandler={closeMenuHandler} />
     </>
   );
