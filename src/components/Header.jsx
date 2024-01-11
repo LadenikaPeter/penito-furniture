@@ -79,39 +79,46 @@ export default function Header({
           </div>
         </div>
       </div>
-
       <div
         id="mobile-menu"
         className={`${isOpen && "block"}  ${initial && "hidden"}
          relative z-[1]`}
       >
-        <div
-          className={`px-6 py-6 flex flex-col gap-3 rounded text-[#1C2A2F] bg-[#F2C229] absolute w-full animate__animated 
+        <div className="flex justify-center">
+          <div
+            className={`px-6 py-6 max-w-[600px] flex flex-col gap-3 rounded text-[#1C2A2F] bg-[#F2C229] absolute w-full animate__animated 
           
           ${isOpen && "animate__slideInDown"} 
           ${!isOpen && "animate__slideOutLeft"}
           
           `}
-        >
-          {NAV_MENU.map((menu, i) => {
-            return (
-              <a
-                onClick={closeMobileMenu}
-                className="font-medium border-[2px] border-white border-solid p-[5px] rounded"
-              >
-                {menu}
-              </a>
-            );
-          })}
-          <a className="font-medium border-[2px] border-white border-solid p-[5px] rounded">
-            Cart
-          </a>
-          <div className="flex gap-2">
-            <input
-              placeholder="search"
-              className="flex-grow p-[5px] focus:outline-0 rounded-[4px]"
-            />
-            <img src="src/assets/search-icon.svg" className="cursor-pointer" />
+          >
+            {NAV_MENU.map((menu, i) => {
+              return (
+                <a
+                  onClick={closeMobileMenu}
+                  className="font-medium border-[2px] border-white border-solid p-[5px] rounded"
+                >
+                  {menu}
+                </a>
+              );
+            })}
+            <a
+              onClick={closeMobileMenu}
+              className="font-medium border-[2px] border-white border-solid p-[5px] rounded"
+            >
+              Cart
+            </a>
+            <div className="flex gap-2">
+              <input
+                placeholder="search"
+                className="flex-grow p-[5px] focus:outline-0 rounded-[4px]"
+              />
+              <img
+                src="src/assets/search-icon.svg"
+                className="cursor-pointer"
+              />
+            </div>
           </div>
         </div>
       </div>

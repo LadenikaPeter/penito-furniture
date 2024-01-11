@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import {
   GALLERY,
   SECOND__SECTION,
@@ -33,7 +33,6 @@ export default function Home({ menuOpen, menuClosedHandler }) {
     return images;
   }
 
-
   return (
     <>
       <div
@@ -58,7 +57,7 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                 between Beauty and functionality
               </p>
               <div className="flex gap-16 max-[768px]:gap-6 max-[374px]:flex-wrap">
-                <button className="flex bg-[#1C2A2F] text-white px-7 py-4 gap-4 items-center rounded-lg cursor-pointer text-nowrap">
+                <button className="flex bg-[#1C2A2F] text-white px-7 py-4 gap-4 items-center rounded-lg cursor-pointer whitespace-nowrap">
                   Shop Now <img src="src/assets/right.svg" />
                 </button>
                 <button>
@@ -86,11 +85,11 @@ export default function Home({ menuOpen, menuClosedHandler }) {
           </div>
 
           <div className="flex justify-center">
-            <div className=" flex items-center  gap-6 overflow-scroll">
+            <div className=" flex items-center  gap-6 overflow-auto">
               {SECOND__SECTION.menu.map((item) => {
                 return (
                   <div
-                    className={`rounded-[72px] py-3 px-6 cursor-pointer text-nowrap  ${
+                    className={`rounded-[72px] py-3 px-6 cursor-pointer whitespace-nowrap  ${
                       item === menuItem
                         ? "bg-[#1FB890]  text-white"
                         : "bg-[#F8FBFB] text-black"
