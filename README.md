@@ -32,6 +32,9 @@ To run this project locally, follow these steps:
    ```bash
    npm run dev
 
+## Deployed site
+https://furnitures-from-penito.netlify.app/
+
 ## Contributing
 If you'd like to contribute to Penito Furniture, please follow the contributing guidelines.
 
