@@ -45,7 +45,7 @@ export default function Header({
                 </div>
                 <div className="flex gap-8">
                   <img
-                    src="src/assets/search-icon.svg"
+                    src="/assets/search-icon.svg"
                     className="cursor-pointer"
                   />
                   <img
