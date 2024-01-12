@@ -23,7 +23,7 @@ export default function Header({
         <div className="flex justify-between h-16">
           <div className="flex items-center flex-grow">
             <a className=" flex  xl:mr-52 mr-[5.5rem]">
-              <img src="src/assets/icon.svg" alt="Logo" />
+              <img src="/assets/icon.svg" alt="Logo" />
               <h2 className="text-[30px] font-semibold pl-1">Penito</h2>
             </a>
             <div className="hidden flex-grow lg:inline-block">
@@ -49,7 +49,7 @@ export default function Header({
                     className="cursor-pointer"
                   />
                   <img
-                    src="src/assets/cart-icon.svg"
+                    src="/assets/cart-icon.svg"
                     className="cursor-pointer"
                   />
                 </div>
@@ -66,13 +66,13 @@ export default function Header({
               {!isOpen && (
                 <img
                   className="h-10 w-10 duration-300 ease-in-out"
-                  src="src/assets/hamburger-button.svg"
+                  src="/assets/hamburger-button.svg"
                 />
               )}
               {isOpen && (
                 <img
                   className="h-10 w-10 duration-300 ease-in-out"
-                  src="src/assets/cancel.svg"
+                  src="/assets/cancel.svg"
                 />
               )}
             </button>
@@ -115,7 +115,7 @@ export default function Header({
                 className="flex-grow p-[5px] focus:outline-0 rounded-[4px]"
               />
               <img
-                src="src/assets/search-icon.svg"
+                src="/assets/search-icon.svg"
                 className="cursor-pointer"
               />
             </div>

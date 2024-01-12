@@ -58,18 +58,18 @@ export default function Home({ menuOpen, menuClosedHandler }) {
               </p>
               <div className="flex gap-16 max-[768px]:gap-6 max-[374px]:flex-wrap">
                 <button className="flex bg-[#1C2A2F] text-white px-7 py-4 gap-4 items-center rounded-lg cursor-pointer whitespace-nowrap">
-                  Shop Now <img src="src/assets/right.svg" />
+                  Shop Now <img src="/assets/right.svg" />
                 </button>
                 <button>
                   <img
-                    src="src/assets/video Button.svg"
+                    src="/assets/video Button.svg"
                     className="w-[185px]"
                   />
                 </button>
               </div>
             </div>
             <div className="md:col-span-6 md:block hidden pl-2">
-              <img src="src/assets/hero-image.png" />
+              <img src="/assets/hero-image.png" />
             </div>
           </div>
         </section>
@@ -123,8 +123,8 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                       </div>
                       <div className="flex gap-[49px]">
                         <div className="flex">
-                          <img src="src/assets/filled.svg" className="-mb-1" />
-                          {reusable(3, "src/assets/empty.svg", "icon").map(
+                          <img src="/assets/filled.svg" className="-mb-1" />
+                          {reusable(3, "/assets/empty.svg", "icon").map(
                             (image) => {
                               return image;
                             }
@@ -133,12 +133,12 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                         <div className="flex">
                           {reusable(
                             4,
-                            "src/assets/full-star.svg",
+                            "/assets/full-star.svg",
                             "star-icon"
                           ).map((image) => {
                             return image;
                           })}
-                          <img src="src/assets/half-star.svg" />
+                          <img src="/assets/half-star.svg" />
                         </div>
                       </div>
                     </div>
@@ -186,7 +186,7 @@ export default function Home({ menuOpen, menuClosedHandler }) {
               </div>
               <div className="xl:col-span-4 xl:block hidden ">
                 <img
-                  src="src/assets/confrence.png"
+                  src="/assets/confrence.png"
                   alt="confrence-image"
                   className="h-full object-contain"
                 />
@@ -213,7 +213,7 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                         <div className="flex">
                           {reusable(
                             4,
-                            "src/assets/full-star.svg",
+                            "/assets/full-star.svg",
                             "star-icon",
                             25,
                             25
@@ -221,7 +221,7 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                             return image;
                           })}
                           <img
-                            src="src/assets/half-star.svg"
+                            src="/assets/half-star.svg"
                             className="w-[25px] h-[25px]"
                           />
                         </div>
@@ -237,7 +237,7 @@ export default function Home({ menuOpen, menuClosedHandler }) {
             </div>
             <div className="md:col-span-5 md:flex hidden py-[50px] px-[15px]">
               <img
-                src="src/assets/customer.png"
+                src="/assets/customer.png"
                 alt="Testimonial-img"
                 className="object-cover"
               />
@@ -256,7 +256,7 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                   if (item === "") {
                     return <div className="max-[1267px]:hidden"></div>;
                   }
-                  return <img src={`src/assets/sponsors/${item}.svg`} />;
+                  return <img src={`/assets/sponsors/${item}.svg`} />;
                 })}
               </div>
             </div>
@@ -277,12 +277,12 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                 return (
                   <div className="relative group">
                     <img
-                      src={`src/assets/gallery/${item}.png`}
+                      src={`/assets/gallery/${item}.png`}
                       alt="image"
                       className="min-w-[210px] h-[210px]"
                     />
                     <div class="absolute inset-0 rounded-lg  opacity-0 flex items-center justify-center group-hover:opacity-60 group-hover:bg-black transition-opacity">
-                      <img src="src/assets/instagram-outlined.svg" />
+                      <img src="/assets/instagram-outlined.svg" />
                     </div>
                   </div>
                 );

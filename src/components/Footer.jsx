@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex gap-[136px] flex-wrap max-[766px]:flex-col">
           <div className="flex flex-col gap-8 w-[285px]">
             <div className="flex gap-2 ">
-              <img src="src/assets/icon.svg" alt="Logo" />
+              <img src="/assets/icon.svg" alt="Logo" />
               <h2 className="text-[30px] font-semibold pl-1">Penito</h2>
             </div>
 
@@ -23,7 +23,7 @@ export default function Footer() {
               {SOCIALS.map((item) => {
                 return (
                   <img
-                    src={`src/assets/social-icons/${item}.svg`}
+                    src={`/assets/social-icons/${item}.svg`}
                     alt={`${item}-icon`}
                     className="cursor-pointer"
                   />
