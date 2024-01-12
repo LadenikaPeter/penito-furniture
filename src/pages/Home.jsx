@@ -61,10 +61,7 @@ export default function Home({ menuOpen, menuClosedHandler }) {
                   Shop Now <img src="/assets/right.svg" />
                 </button>
                 <button>
-                  <img
-                    src="/assets/video Button.svg"
-                    className="w-[185px]"
-                  />
+                  <img src="/assets/video-button.svg" className="w-[185px]" />
                 </button>
               </div>
             </div>
