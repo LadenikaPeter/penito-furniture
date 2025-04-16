@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 
 export default function Home({ menuOpen, menuClosedHandler }) {
   const [menuItem, setMenuItem] = useState("All Funrnitures");
+  const [name, setName] = useState("unknown");
 
   function changeItem(item) {
     if (item !== "All Funrnitures") {
@@ -70,6 +71,22 @@ export default function Home({ menuOpen, menuClosedHandler }) {
             </div>
           </div>
         </section>
+
+        <div className="card">
+          <button
+            onClick={() => {
+              fetch("/api/")
+                .then((res) => res.json())
+                .then((data) => setName(data.name));
+            }}
+            aria-label="get name"
+          >
+            Name from API is: {name}
+          </button>
+          <p>
+            Edit <code>api/index.ts</code> to change the name
+          </p>
+        </div>
 
         <section id="second__section" className="pt-[120px]">
           <div className="flex items-center flex-col">
